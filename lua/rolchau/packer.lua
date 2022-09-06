@@ -13,4 +13,11 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  -- Telescope (File searching)
+  use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  --use 'kyazdani42/nvim-web-devicons'
+  -- Consider adding this: nvim-treesitter
 end)
