@@ -17,15 +17,14 @@ set nowritebackup
 set cmdheight=1
 filetype plugin indent on
 
-let g:netrw_banner=0
 call plug#begin('~/.vim/plugins')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'gruvbox-community/gruvbox'
   Plug 'itchyny/lightline.vim'
   Plug 'itchyny/vim-gitbranch'
+  Plug 'neovim/nvim-lspconfig'
 call plug#end()
-
 
 colorscheme gruvbox
 highlight Normal guibg=none
@@ -36,6 +35,12 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>v :e $MYVIMRC<cr>
+
+"For code-completion"
+lua require'lspconfig'.tsserver.setup{}
+
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<cr>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.implementation()<cr>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -50,11 +55,11 @@ augroup END
 
 "For git branch view in the status line"
 let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
-      \ }
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'gitbranch#name'
+  \ },
+  \ }
