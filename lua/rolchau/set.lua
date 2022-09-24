@@ -15,8 +15,13 @@ vim.opt.cmdheight = 1
 vim.opt.scrolloff = 8
 vim.opt.signcolumn="yes"
 vim.opt.colorcolumn = "80"
-
-vim.opt.smartindent = true
+vim.opt.cursorline = true
+vim.opt.autoindent= true
+vim.opt.termguicolors = true
+vim.opt.winblend = 0
+vim.opt.wildoptions = 'pum'
+vim.opt.pumblend = 5
+vim.opt.background = 'dark'
 
 vim.opt.wrap = false
 

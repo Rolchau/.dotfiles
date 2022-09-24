@@ -19,6 +19,14 @@ local custom_on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+
+  --formatting
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_command [[augroup Format]] 
+    vim.api.nvim_command [[autocmd! * <buffer>]] 
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[augroup END]]
+  end
 end
 
 -- Add additional capabilities supported by nvim-cmp
@@ -36,7 +44,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- luasnip setup
+-- luasnip
 local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
@@ -80,9 +88,4 @@ cmp.setup {
   },
 }
 
-
---require('lspconfig')['tsserver'].setup{
---    on_attach = on_attach,
---    flags = lsp_flags,
---}
 
