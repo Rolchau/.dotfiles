@@ -22,8 +22,16 @@ nnoremap("<leader>ps", function()
 end)
 
 -- Don't yank with X
-vim.keymap.set('n', 'x', '"_x');
+keymap.set('n', 'x', '"_x');
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>');
 keymap.set('n', '-', '<C-x>');
+
+-- Diagnostics
+nnoremap("<leader>dd", 
+  function()
+    require('telescope.builtin').diagnostics()
+  end
+)
+nnoremap("<leader>do", '<cmd>lua vim.diagnostic.open_float({border = "double"})<CR>')

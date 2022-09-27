@@ -1,6 +1,5 @@
-n = require('neosolarized').setup({
-  comment_italics = true,
-})
+require('kanagawa').setup()
+vim.cmd("colorscheme kanagawa")
 
 --local Color, colors, Group, groups, styles = require('colorbuddy').setup()
 local colorbuddy = require('colorbuddy.init')
