@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "/Users/dktoroma/.local/share/nvim/site/pack/packer/start/vim-autoclose",
     url = "https://github.com/townk/vim-autoclose"
   },
+  ["vim-moonfly-colors"] = {
+    loaded = true,
+    path = "/Users/dktoroma/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
+    url = "https://github.com/bluz71/vim-moonfly-colors"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/dktoroma/.local/share/nvim/site/pack/packer/start/vim-surround",

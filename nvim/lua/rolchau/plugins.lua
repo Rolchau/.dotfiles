@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
   -- Colors
   use 'tjdevries/colorbuddy.nvim'
   use 'rebelot/kanagawa.nvim'
+  use 'bluz71/vim-moonfly-colors'
 
   -- LSP and Autocompletion
   use 'neovim/nvim-lspconfig'
@@ -34,7 +35,7 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
-  -- Prettify/formatting setup
+  -- ESLINT + Prettify/formatting setup
   use { 'jose-elias-alvarez/null-ls.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -58,5 +59,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround' -- Surround stuff with forexample '"{( etc. (ds, cs, yess) 
 end)
   -- TODO EXTRA STUFF TO MAKE NVIM KOWABUNGA COOL: 
-  -- 1. Add React Native Script completion 
+  -- 1. Add React Native Script completion - Thinks its already active!?! 
   -- 2. Add a TODO plugin....I desperately want one...
+  -- 3. Add another color-scheme, or change the background-color to be less "Dusty"
+  -- 4. Add git integration

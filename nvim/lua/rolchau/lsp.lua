@@ -13,7 +13,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] =
     border = "double"
   }
 )
-:
+
 local custom_on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   client.resolved_capabilities.document_formatting = false
