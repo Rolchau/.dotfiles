@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/Users/dktoroma/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-highlight-colors"] = {
+    loaded = true,
+    path = "/Users/dktoroma/.local/share/nvim/site/pack/packer/start/nvim-highlight-colors",
+    url = "https://github.com/brenoprata10/nvim-highlight-colors"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/dktoroma/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",

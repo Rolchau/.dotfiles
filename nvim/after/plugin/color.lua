@@ -10,10 +10,12 @@ local my_colors = {
   bg = "#07242c"
 }
 
--- TODO 
+-- using colorbuddy to set a custom color for TODO 
 --n.Group.new('TODO', n.colors.red)
 require('kanagawa').setup({colors = my_colors})
 vim.cmd("colorscheme kanagawa")
 --vim.cmd("colorscheme moonfly")
 
+-- Color Highligthing
+require('nvim-highlight-colors').setup {}
 
