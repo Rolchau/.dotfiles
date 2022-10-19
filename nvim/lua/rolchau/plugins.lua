@@ -58,6 +58,13 @@ return require('packer').startup(function(use)
   -- Making my life easier
   use 'townk/vim-autoclose' -- Closing brackets
   use 'tpope/vim-surround' -- Surround stuff with forexample '"{( etc. (ds, cs, yess) 
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  } -- Easy commenting
+  use 'JoosepAlviste/nvim-ts-context-commentstring' -- Context aware commenting 
 
   -- TODO/Wiki tools
   use 'vimwiki/vimwiki'
