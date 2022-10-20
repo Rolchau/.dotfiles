@@ -16,7 +16,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] =
 
 local custom_on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  client.resolved_capabilities.document_formatting = false
+  client.server_capabilities.document_formatting = false
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
